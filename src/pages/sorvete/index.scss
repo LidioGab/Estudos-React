@@ -1,0 +1,119 @@
+.pagina-sorveteria{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F6FA;
+    width: 100%;
+    height: 900px;
+
+    .container{
+        background-color: #ffff;
+        height: 628px;
+        width: 498px;
+    } 
+
+    .header{
+        background: url(https://cdn.discordapp.com/attachments/1082674604285366322/1137017827459612832/image.png), lightgray 0px -95.219px / 100% 217.529% no-repeat;
+        background-repeat: no-repeat;
+        height: 128px;
+        display: flex;
+        align-items: end;
+        padding: 0 20px;
+    }
+
+    .header > div{
+        background-color: #66344A;
+        height: 36px;
+        width: 133px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header h1{
+        color: #FFF;
+        text-align: center;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+    }
+
+    .add-mid{
+        padding: 7px 30px;
+        button{
+            border: none;
+            background-color: #66344A;
+            color: #Ffff;
+            padding: 8px 16px;
+            margin-left: 16px;
+            cursor: pointer;
+        }
+    }
+
+    .add-mid > h1{
+        font-size: 22px;
+        margin: 5px 0px;
+        color: #646464;
+    }
+
+    .add-inputs > input{
+        height: 30px;
+        margin: 3px;
+        width: 150px;
+        text-align: center;
+
+    }
+
+    .exeb-lista{
+        display: flex;
+        flex-direction: column;
+        padding: 0px 30px;
+
+        .titulo{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+
+        h1{
+         color: #646464;
+         font-size: 22px;
+
+        }
+
+        h6{
+            font-size: 11px;
+            color: #646464;
+        }
+    }
+
+    .card-produtos{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-height: 300px;
+        width: 100%;
+        overflow-y: scroll;
+    }
+
+    .inside{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 3px;
+        height: 30px;
+        width: 420px;
+        border: 1px solid #DFDFDF;
+        min-width: 420px;
+        min-height: 30px;
+        
+
+        span{
+            color: #646464;
+        }
+    }
+}
