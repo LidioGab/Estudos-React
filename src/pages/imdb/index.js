@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
-import './index.scss'
+import './index.scss';
+import pesquisa from '../../image/icone pesquisa.png'
 
 
 export default function Imdb() {
@@ -23,6 +24,7 @@ export default function Imdb() {
                 <div className='header'>
                     <div className='header-titulo'>
                         <h1>IMDB</h1>
+                        
                     </div>
                 </div>
 
@@ -31,7 +33,7 @@ export default function Imdb() {
 
                     <div className="mid-consult">
                         <input type="text" value={filme} onChange={(e) => setFilme(e.target.value)} />
-                        <button onClick={Buscar}>Clique</button>
+                        <button onClick={Buscar}><img src={pesquisa}/></button>
                     </div>
                 </div>
 
@@ -40,13 +42,11 @@ export default function Imdb() {
                         <thead>
                             <tr>
                                 <th>Codigo</th>
-                                <th>Nome</th>
-                                <th>Poster</th>
-                            </tr>
+                                <th>Nome</th>                            </tr>
                         </thead>
                         <tbody>
                             {listaFilmes.map((item) =>(
-                                <tr key={item.imdbID}>
+                                <tr className="map" key={item.imdbID}>
                                     <td>{item.imdbID}</td>
                                     <td>{item.Title}</td>
                                     <td><img className="poster" src={item.Poster}/></td>

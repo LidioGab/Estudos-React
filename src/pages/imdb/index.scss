@@ -55,19 +55,27 @@
        
       .mid-consult{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
+        border: solid 1px #ADA646;
         input{
             width: 423px;
             height: 45px;
             outline: none;
+            border: none;
         }
+
+        button{
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
         label{
             align-self: flex-start;
             position: relative;
             top: 30px;
             left: 20px;
-
             font-size: 10px;
             font-weight: 800;
             color: #ADA646;
@@ -95,13 +103,26 @@
         flex-direction: column;
         align-items: center;
         justify-content: start;
+       
+
     }
 
-    tr{
-       width: 420px;
-       display: flex;
-       justify-content: space-between;
+    td{
+        border-collapse: collapse;
     }
 
-    
+    tr img{
+       display: none;
+    }
+
+    .map:hover{
+        background-color: #ADA646;
+        color: #FFF;
+        height: 40px;
+        img{
+        display: block;
+        border: 2px solid #ADA646;
+        border-radius: 10000px;
+        }
+    }
 }
