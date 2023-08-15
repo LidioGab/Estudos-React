@@ -1,44 +1,64 @@
 import './index.scss';
 import axios from 'axios';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import logo from '../../assets/images/logoPokedex_1.png'
 
 
 export default function Pokemon() {
     const [pokemon, setPokemon] = useState('');
     const [listaPokemon, setListaPokemon] = useState([]);
+    const [conta, setConta] = useState(0)
 
 
     async function BuscarPokemon() {
-        let url = 'https://pokeapi.co/api/v2/pokemon';
+        let url = 'https://pokeapi.co/api/v2/pokemon?offset=' + conta + '&limit=20';
         let resposta = await axios.get(url);
 
         let respPoke = [];
 
         for (let item of resposta.data.results) {
             let respostaPoke = await axios.get(item.url);
-            let imagem = respostaPoke.data.sprites.other['official-artwork'].front_default;
+            let imagem = ''
+
+            if (parseInt(Math.random() * 10) < 2) {
+                imagem = respostaPoke.data.sprites.other['official-artwork'].front_shiny;
+
+            }
+            else {
+                imagem = respostaPoke.data.sprites.other['official-artwork'].front_default;
+            }
+
+
             let tipos = '';
 
             for (let i of respostaPoke.data.types) {
                 tipos = tipos + i.type.name + ','
             }
-    
+
             respPoke.push({
                 nome: item.name,
                 imagem: imagem,
                 tipo: tipos
             })
-    
+
         }
 
-        setListaPokemon(respPoke)
+        setListaPokemon(listaPokemon.concat(respPoke));
     }
+
+    useEffect(() => {
+
+        if (conta !== 0) {
+
+            BuscarPokemon();
+        }
+    }, [conta]);
 
     return (
         <div className="pagina-pokemon">
-            <h1>Pokemon</h1>
+            <img src={logo}></img>
 
-            <button onClick={BuscarPokemon}>Buscar</button>
+            <button onClick={BuscarPokemon}>Encontrar Pokemons</button>
 
             <div className='lista-pokemon'>
                 {listaPokemon.map(item =>
@@ -48,8 +68,9 @@ export default function Pokemon() {
                         <h3>{item.tipo}</h3>
                     </div>
                 )}
-
             </div>
+
+            <button onClick={() => { setConta(conta + 20) }}> buscar mais </button>
         </div>
     )
 }

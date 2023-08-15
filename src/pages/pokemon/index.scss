@@ -2,6 +2,74 @@
     background: linear-gradient(90deg, #9A99C6 21.88%, #C699B2 100%);
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
     height: 100%;
+
+    img{
+        height: 130px;
+        width: auto;
+        margin-bottom: 30px;
+    }
+
+    button{
+        padding: 10px 20px;
+        border-radius: 30px;
+        border: none;
+        background-color: #7760CB;
+        color: #fff;
+        cursor: pointer;
+        transition: 0.3s;
+        margin-bottom: 20px;
+    }
+
+    button:hover{
+        background-color: #7760cb86;
+    }
+
+    .lista-pokemon{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width:1100px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+        padding: 30px;
+    }
+
+    .card-pokemon{
+        width: 210px;
+        height: 280px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #95CEC4;
+        border-radius: 20px;
+        padding: 20px;
+        margin: 10px;
+        img{
+            background-color: rgba(240, 248, 255, 0.596);
+            border-radius: 200px;
+        }
+
+        h1{
+            color: #394442;
+            font-family: Poppins;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+        }
+
+        h3{
+            color: #383838;
+            font-family: Poppins;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+    }
 }
+
