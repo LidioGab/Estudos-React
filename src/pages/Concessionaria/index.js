@@ -1,5 +1,4 @@
 import './index.scss'
-import Carro from '../../image/carro 2.png'
 import { useState } from 'react'
 
 export default function Concessionaria(){
@@ -29,7 +28,7 @@ export default function Concessionaria(){
 
             <div className='content'>
                 <div className='content-img'>
-                    <img src={Carro}/>
+                    <img/>
                 </div>
 
                 <div className='content-infos'>

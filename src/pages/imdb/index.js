@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import './index.scss';
-import pesquisa from '../../image/icone pesquisa.png'
+import pesquisa from '../../assets/images/lupa.png'
 
 
 export default function Imdb() {
@@ -38,18 +38,21 @@ export default function Imdb() {
                 </div>
 
                 <div className="Tabela">
-                    <table>
+                    <table className="table">
                         <thead>
                             <tr>
                                 <th>Codigo</th>
-                                <th>Nome</th>                            </tr>
+                                <th>Nome</th>
+                                <th>Ano</th>                              
+                            </tr>
                         </thead>
                         <tbody>
                             {listaFilmes.map((item) =>(
                                 <tr className="map" key={item.imdbID}>
                                     <td>{item.imdbID}</td>
                                     <td>{item.Title}</td>
-                                    <td><img className="poster" src={item.Poster}/></td>
+                                    <td>{item.Year}</td>
+                                    <td><img className="poster"  src={item.Poster}/></td>
                                 </tr>
                            ))}
                         </tbody>
