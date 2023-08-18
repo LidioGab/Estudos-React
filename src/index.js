@@ -8,6 +8,7 @@ import Concessionaria from './pages/Concessionaria';
 import Sorveteria from './pages/sorvete';
 import Imdb from './pages/imdb';
 import Pokemon from './pages/pokemon';
+import Netflix from './pages/netflix';
 
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -24,6 +25,7 @@ root.render(
         <Route path='/Sorveteria' element={<Sorveteria/>} />
         <Route path='/Imdb' element={<Imdb/>} />
         <Route path='/Pokemon' element={<Pokemon/>} />
+        <Route path='/Netflix' element={<Netflix/>} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
